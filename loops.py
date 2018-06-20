@@ -85,15 +85,16 @@ print("\n\n",10*"*")
 
 #Q.7- Create a user defined dictionary
 #and get keys corresponding to the value using for loop.
+n= int(input("enter number of keys :"))
 dict={}
-for i in range(5):
-    context=[]
-    name=input("enter name:")
-    age=input("enter age:")
-    context['name']=name
-    context['age']=age
-    dict.append(context)
-print(dict)
+for i in range(n):
+    k=input("enter name:")
+    v=int(input("enter age"))
+    dict[k]=v
+
+for k,v in dict.items():
+    print(k,v)
+
 
 print("\n\n",10*"*")
 
@@ -105,6 +106,7 @@ print("\n\n",10*"*")
 
 x=int(input("enter the number of elements you want to input:"))
 list1=[]
+flag = 0
 print("enter elements of a list:")
 for i in range(0,x):
     y=input("enter element:")
@@ -113,12 +115,16 @@ print("list is:",list1)
 z=input("enter element which you want to delete:")
 for j in list1:
     if (j == z):
+        flag = 1
         list1.remove(j)
         break
     else:
-        print(z,"not found.")
-        break
-print(list1)
+        flag = 0
+if(flag == 0):
+    print("element not found")
+else:
+    print("element is removed from list.")
+    print(list1)
 
 print("\n\n",10*"*")
     
